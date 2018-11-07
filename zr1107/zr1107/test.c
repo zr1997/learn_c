@@ -1,19 +1,29 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-int Mul(int m){
-	for (int line = 1; line <= m; ++line){
-		for (int column = 1; column <= line; ++column){
-			int ret = line * column;
-			printf("%d*%d=%2d\t", line, column, m);
+int Isleap(int i){
+	if (i % 100 != 0){
+		if (i % 4 == 0){
+			return 1;
 		}
-		printf("\n");
+		return 0;
 	}
+	if (i % 400 == 0){
+		return 1;
+	}
+	return 0;
 }
 int main(){
-	int num = 0;
+	int ret = 0;
+	int year = 0;
 	printf("input a number:");
-	scanf("%d",&num);
-	Mul(num);
+	scanf("%d",&year);
+	ret = Isleap(year);
+	if (ret == 1){
+		printf("it is a leap year");
+	}
+	else{
+		printf("it is not a leap year");
+	}
 	system("pause");
 	return 0;
 }
