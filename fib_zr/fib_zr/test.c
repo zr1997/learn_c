@@ -1,12 +1,16 @@
 #include<stdio.h>
+#include<stdlib.h>
 int Fib(int n){
-	if (n == 1 || n == 2){
-		return 1;
+	int i, j, sum;
+	for (i = 1, j = 1, n = 3; n < 11; n++){
+		sum = i + j;
+		i = j;
+		j = sum;
 	}
-	return Fib(n - 1) + Fib(n - 2);
+	return j;
 }
 int main(){
-	printf("%d\n", Fib(4));
+	printf("%d\n", Fib(10));
 	system("pause");
 	return 0;
 }
