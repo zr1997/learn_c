@@ -1,46 +1,35 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-int init(int arr[],int len){
-	int i = 0;
-	int num = 0;
-	printf("init numbers,please input five numbers:\n");
-	for (i = 0; i < len; ++i){
-		scanf("%d", &num);
-		arr[i] = num;
-	}
-}
-void empty(int arr[],int len){
-	int i = 0;
-	printf("empty:\n");
-	for (i = 0; i < len; ++i){
-		arr[i] = 0;
-	}
-}
-void reverse(int arr[],int len){
-	int i = 0;
-	int arr2[5];
-	printf("reverse:\n");
-	for (i = 0; i < len; ++i){
-		arr2[i] = arr[i];
-	}
-	for (i = 0; i < len; ++i){
-		arr[i] = arr2[len - 1 - i];
-	}
-}
+#include <math.h>
+//int Isprime(int i){
+//	if (i == 1){
+//		return 0;
+//	}
+//	for (int j = 2; j <sqrt(i); j++){
+//		if (i%j == 0){
+//			return 0;
+//		}
+//	}
+//	return 1;
+//}
 int main(){
-	int arr[5] = {0};
-	int len = sizeof(arr) / sizeof(arr[0]);
-	init(arr,len);
-	reverse(arr, len);
-	for (int i = 0; i < len; ++i){
-		printf("%d\t", arr[i]);
+	int i = 0;
+	int sum = 0;
+	for (i = 0; i <= 100; ++i){
+		sum += i;
+		printf("%d\n", %d);
 	}
-	printf("\n");
-	empty(arr,len);
-	for (int i = 0; i < len; ++i){
-		printf("%d\t", arr[i]);
-	}
-	printf("\n");
+//	int num = 0;
+//	int ret = 0;
+//	printf("please input a number:\n");
+//	scanf("%d", &num);
+//	ret=Isprime(num);
+//	if (ret == 1){
+//		printf("is a prime number");
+//	}
+//	else{
+//		printf("is not a prime number");
+//	}
 	system("pause");
 	return 0;
 }
