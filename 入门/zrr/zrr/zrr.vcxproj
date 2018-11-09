@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{DDA33F7D-2337-4C29-A41E-931B004FDA5A}</ProjectGuid>
-    <RootNamespace>fib_zr</RootNamespace>
+    <ProjectGuid>{42E407EC-2120-46A3-AAA5-0E5FBC23E739}</ProjectGuid>
+    <RootNamespace>zrr</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
