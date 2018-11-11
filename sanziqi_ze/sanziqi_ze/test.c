@@ -77,8 +77,21 @@ char CheckWinner(){
 		return g_board[0][2];
 	}
 	//最后检查是否为平局
-
+	//if (is_full()){
+	//	return 'q';
+	//}
+	//return 0;
 }
+//static int is_full(){
+//	for (int row = 0; row < ROW; ++row){
+//		for (int col = 0; col < COL; ++col){
+//			if (g_board[row][col] == ' '){
+//				return 0;
+//			}
+//		}
+//	}
+//	return 1;
+//}
 int main(){	
 	Init();//初始化棋盘为‘ ’
 	char winner;
@@ -102,7 +115,7 @@ int main(){
 		printf("玩家胜\n");
 	}else if (winner == 'o'){
 		printf("电脑胜\n");
-	}else{
+	}else if(winner=='q'){
 		printf("平局\n");
 	}
 	system("pause");
