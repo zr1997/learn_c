@@ -77,27 +77,27 @@ char CheckWinner(){
 		return g_board[0][2];
 	}
 	//最后检查是否为平局
-	//if (is_full()){
-	//	return 'q';
-	//}
-	//return 0;
+	if (is_full()){
+		return 'q';
+	}
+	return ' ';
 }
-//static int is_full(){
-//	for (int row = 0; row < ROW; ++row){
-//		for (int col = 0; col < COL; ++col){
-//			if (g_board[row][col] == ' '){
-//				return 0;
-//			}
-//		}
-//	}
-//	return 1;
-//}
+int is_full(){
+	for (int row = 0; row < ROW; ++row){
+		for (int col = 0; col < COL; ++col){
+			if (g_board[row][col] == ' '){
+				return 0;
+			}
+		}
+	}
+	return 1;
+}
 int main(){	
 	Init();//初始化棋盘为‘ ’
 	char winner;
 	while (1){
-		Printf();//打印一个空白的棋盘
 		PlayerMove();//玩家落子检查是否结束游戏
+		Printf();
 	    //玩家的子为‘x’电脑的子为‘o’
 		//winner == ‘x’时玩家胜；winner == ‘o’时电脑胜
 		//winner == ‘ ’时胜负未分；winner == ‘q’是平局
@@ -106,6 +106,7 @@ int main(){
 			break;
 		}
 		ComputerMove(); //电脑落子检查是否结束游戏
+		Printf();
 		winner = CheckWinner();
 		if (winner != ' '){
 			break;
