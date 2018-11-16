@@ -95,6 +95,7 @@ int is_full(){
 int main(){	
 	Init();//初始化棋盘为‘ ’
 	char winner;
+	Printf();
 	while (1){
 		PlayerMove();//玩家落子检查是否结束游戏
 		Printf();
