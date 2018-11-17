@@ -60,7 +60,7 @@ void DisplayMap(char map[MAX_ROM + 2][MAX_COL + 2]){
 	}
 }
 void UpdataShowMap(char show_map[MAX_ROM + 2][MAX_COL + 2],
-	char mine_map[MAX_ROM + 2][MAX_COL + 2], int row, int col){
+	char mine_map[MAX_ROM + 2][MAX_COL + 2],int row,int col){
 	int mine_cnt = (mine_map[row - 1][col - 1] - '0')
 		+ (mine_map[row - 1][col] - '0')
 		+ (mine_map[row - 1][col + 1] - '0')
@@ -88,7 +88,7 @@ void Game(){
 	while (1){
 		//玩家输入坐标并判定坐标是否合法
 		int row, col;
-		printf(""); 
+		printf("请输入坐标:\n"); 
 		scanf("%d %d", &row, &col);
 		if (row <= 0 || row > MAX_ROM || col <= 0 || col > MAX_COL){
 			printf("输入不合法,请重新输入!\n");
@@ -96,7 +96,7 @@ void Game(){
 		}
 		//判断玩家是否踩雷,踩雷则游戏结束
 		if (mine_map[row][col] == '1'){
-			printf("游戏结束");
+			printf("游戏结束\n");
 			DisplayMap(mine_map);
 			break;
 		}
@@ -108,7 +108,7 @@ void Game(){
 			break;
 		}
 		//没有全部掀开则统计该位置周围有几个雷,将数字更新到地图上
-		UpdataShowMap(show_map,mine_map,row,col);
+		UpdataShowMap(show_map, mine_map, row, col);
 		DisplayMap(show_map);
 	}
 }
