@@ -32,11 +32,12 @@ void PlayerMove(){
 		}
 		if (g_board[row][col] != ' '){
 			printf("该位置已有子，请重新输入：\n");
-			continue;
+            continue;
 		}
-		g_board[row][col] = 'x';
-		break;
+		    g_board[row][col] = 'x';
+			break;
 	}
+	Printf();
 }
 void ComputerMove(){
 	printf("请电脑落子\n");
@@ -95,10 +96,9 @@ int is_full(){
 int main(){	
 	Init();//初始化棋盘为‘ ’
 	char winner;
-	Printf();
 	while (1){
-		PlayerMove();//玩家落子检查是否结束游戏
 		Printf();
+		PlayerMove();//玩家落子检查是否结束游戏
 	    //玩家的子为‘x’电脑的子为‘o’
 		//winner == ‘x’时玩家胜；winner == ‘o’时电脑胜
 		//winner == ‘ ’时胜负未分；winner == ‘q’是平局
@@ -107,7 +107,6 @@ int main(){
 			break;
 		}
 		ComputerMove(); //电脑落子检查是否结束游戏
-		Printf();
 		winner = CheckWinner();
 		if (winner != ' '){
 			break;
@@ -117,7 +116,7 @@ int main(){
 		printf("玩家胜\n");
 	}else if (winner == 'o'){
 		printf("电脑胜\n");
-	}else if(winner=='q'){
+	}else if(winner == 'q'){
 		printf("平局\n");
 	}
 	system("pause");
