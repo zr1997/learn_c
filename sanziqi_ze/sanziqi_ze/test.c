@@ -15,8 +15,8 @@ void Init(){
 }
 void Printf(){
 	for (int row = 0; row < ROW; ++row){
-		printf("| %c | %c | %c |\n",g_board[ROW][0],g_board[ROW][1],
-			g_board[ROW][2]);
+		printf("| %c | %c | %c |\n",g_board[row][0],g_board[row][1],
+			g_board[row][2]);
 		printf(" ---|---|--- \n");
 	}
 }
@@ -34,10 +34,9 @@ void PlayerMove(){
 			printf("该位置已有子，请重新输入：\n");
             continue;
 		}
-		    g_board[row][col] = 'x';
+		    g_board[row][col] = 'X';
 			break;
 	}
-	Printf();
 }
 void ComputerMove(){
 	printf("请电脑落子\n");
@@ -47,7 +46,7 @@ void ComputerMove(){
 		if (g_board[row][col] != ' '){
 			continue;
 		}
-		g_board[row][col] = 'o';
+		g_board[row][col] = 'O';
 		break;
 	}
 }
@@ -79,7 +78,7 @@ char CheckWinner(){
 	}
 	//最后检查是否为平局
 	if (is_full()){
-		return 'q';
+		return 'Q';
 	}
 	return ' ';
 }
@@ -97,8 +96,9 @@ int main(){
 	Init();//初始化棋盘为‘ ’
 	char winner;
 	while (1){
+		ComputerMove();
 		Printf();
-		PlayerMove();//玩家落子检查是否结束游戏
+		//电脑落子检查是否结束游戏
 	    //玩家的子为‘x’电脑的子为‘o’
 		//winner == ‘x’时玩家胜；winner == ‘o’时电脑胜
 		//winner == ‘ ’时胜负未分；winner == ‘q’是平局
@@ -106,17 +106,18 @@ int main(){
 		if (winner != ' '){
 			break;
 		}
-		ComputerMove(); //电脑落子检查是否结束游戏
+		PlayerMove();//玩家落子检查是否结束游戏
 		winner = CheckWinner();
 		if (winner != ' '){
 			break;
 		}
 	}
-	if (winner == 'x'){
+	Printf();
+	if (winner == 'X'){
 		printf("玩家胜\n");
-	}else if (winner == 'o'){
+	}else if (winner == 'O'){
 		printf("电脑胜\n");
-	}else if(winner == 'q'){
+	}else if(winner == 'Q'){
 		printf("平局\n");
 	}
 	system("pause");
