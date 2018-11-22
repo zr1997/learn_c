@@ -3,11 +3,10 @@
 
 int count_one_bits(unsigned int value){
 	int count = 0;
-	while (value){
-		if (value % 2 == 1 || value % 2 == (-1)){
+	for (int i = 0; i < 32; ++i){
+		if (value & (1<<i)){
 			++count;
 		}
-		value /= 2;
 	}
 	return count;
 }
