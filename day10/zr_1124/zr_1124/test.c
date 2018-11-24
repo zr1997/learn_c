@@ -5,7 +5,6 @@ int Printf_num(int num){
 		printf("%d", num % 10);
 		Printf_num(num / 10);
 	}
-	printf("%d", num);
 }
 int main(){
 	int num = 1234;
